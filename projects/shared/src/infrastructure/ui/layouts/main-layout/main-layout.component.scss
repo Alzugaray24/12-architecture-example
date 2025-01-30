@@ -1,0 +1,19 @@
+@use "../../styles/variables.scss" as *;
+@use "../../styles/mixins.scss" as *;
+
+.layout {
+  background-color: $background-color;
+  color: $text-color;
+  font-family: $font-primary;
+  padding: $spacing-large;
+
+  &__header {
+    @include flex(row, space-between, center);
+    background-color: $primary-color;
+    padding: $spacing-medium;
+    box-shadow: $box-shadow;
+  }
+
+  &__main {
+  }
+}

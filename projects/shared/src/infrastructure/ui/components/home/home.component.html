@@ -1,0 +1,9 @@
+<div class="home">
+  <lib-card
+    *ngFor="let card of cards"
+    [title]="card.title"
+    [description]="card.description"
+    [detailsRoute]="card.detailsRoute"
+  >
+  </lib-card>
+</div>

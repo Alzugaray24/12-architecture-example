@@ -1,0 +1,26 @@
+@use "../../styles/mixins.scss" as *;
+@use "../../styles/variables.scss" as *;
+
+.card {
+  background-color: $background-color;
+  border: 1px solid $border-color;
+  border-radius: 8px;
+  padding: $spacing-medium;
+  box-shadow: $box-shadow;
+  font-family: $font-primary;
+  color: $text-color;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  @include display-flex();
+
+  &__title {
+    font-size: 1.5rem;
+    margin-bottom: $spacing-small;
+  }
+
+  &__description {
+    font-size: $font-size-base;
+    margin-bottom: $spacing-medium;
+  }
+}

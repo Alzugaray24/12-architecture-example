@@ -1,0 +1,17 @@
+@use "../../styles/variables.scss" as *;
+
+.home {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); // Dos columnas
+  gap: $spacing-large;
+  padding: $spacing-large;
+  width: 100%; // Ocupa todo el ancho disponible
+  height: 80vh; // Ocupa toda la altura de la pantalla
+  box-sizing: border-box; // Incluye padding y border en el tamaño total
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: $breakpoint-tablet) {
+    grid-template-columns: 1fr; // Una columna en pantallas más pequeñas
+  }
+}

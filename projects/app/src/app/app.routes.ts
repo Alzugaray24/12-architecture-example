@@ -2,11 +2,14 @@ import { Routes } from '@angular/router';
 
 export const routes: Routes = [
   {
-    path: 'users',
-    loadChildren: () => import('users').then(m => m.usersRoutes)
+    path: '',
+    loadChildren: () =>
+      import('../../../shared/src/infrastructure/ui/routes/shared.routes').then(
+        (m) => m.sharedRoutes
+      ),
   },
-  // {
-  //   path: '',
-  //   loadChildren: () => import('home').then(m => m.homeRoutes)
-  // }
+  {
+    path: 'users',
+    loadChildren: () => import('users').then((m) => m.usersRoutes),
+  },
 ];

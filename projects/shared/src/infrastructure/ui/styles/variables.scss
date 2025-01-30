@@ -1,0 +1,27 @@
+$primary-color: #a52a2a; // Marrón rojizo (elegante y cálido)
+$secondary-color: #ffd700; // Dorado (resalta detalles lujosos)
+$accent-color: #ff6347; // Rojo tomate (apetitoso)
+
+$background-color: #f5f5dc; // Beige claro (limpio y acogedor)
+$background-dark: #2c2c2c; // Gris oscuro (contraste moderno)
+$text-color: #333; // Gris oscuro para texto principal
+$text-light: #f9f9f9; // Blanco humo para texto sobre fondos oscuros
+
+$button-primary: $primary-color;
+$button-hover: #8b0000;
+$button-disabled: #bdbdbd;
+
+$border-color: #ddc5a2; // Beige más oscuro para sutileza
+$box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+
+$font-primary: "Merriweather", serif;
+$font-secondary: "Open Sans", sans-serif;
+$font-size-base: 16px;
+
+$spacing-small: 8px;
+$spacing-medium: 16px;
+$spacing-large: 32px;
+
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
