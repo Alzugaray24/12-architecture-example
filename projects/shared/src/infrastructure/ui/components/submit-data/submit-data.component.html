@@ -1,1 +1,11 @@
-<p>submit-data works!</p>
+<button
+  class="button"
+  [ngClass]="{
+    'button--create': action === 'create',
+    'button--update': action === 'update',
+    'button--delete': action === 'delete',
+    'button--list': action === 'list'
+  }"
+>
+  <ng-content></ng-content>
+</button>

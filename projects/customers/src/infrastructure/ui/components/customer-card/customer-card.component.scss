@@ -1,0 +1,28 @@
+@use "../../../../../../shared/src/infrastructure/ui/styles/variables.scss" as *;
+
+.customer-card {
+  background-color: $background-color;
+  border: 1px solid $border-color;
+  border-radius: 8px;
+  box-shadow: $box-shadow;
+  padding: $spacing-medium;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &__name {
+    font-family: $font-primary;
+    font-size: 1.5rem;
+    margin-bottom: $spacing-small;
+    color: $text-color;
+  }
+
+  &__type {
+    font-family: $font-secondary;
+    font-size: 1rem;
+    color: $text-color;
+  }
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  }
+}

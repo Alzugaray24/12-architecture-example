@@ -1,9 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'lib-submit-data',
-  imports: [],
+  selector: 'app-button',
+  imports: [CommonModule],
   templateUrl: './submit-data.component.html',
-  styleUrl: './submit-data.component.scss',
+  styleUrls: ['./submit-data.component.scss'],
 })
-export class SubmitDataComponent {}
+export class SubmitDataComponent {
+  @Input() action: 'create' | 'update' | 'delete' | 'list';
+}

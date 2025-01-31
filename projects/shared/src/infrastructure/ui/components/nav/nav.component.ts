@@ -1,9 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'lib-nav',
-  imports: [],
+  imports: [CommonModule, RouterLink],
   templateUrl: './nav.component.html',
-  styleUrl: './nav.component.scss',
+  styleUrls: ['./nav.component.scss'],
 })
-export class NavComponent {}
+export class NavComponent {
+  @Input() navItems: { label: string; route: string }[];
+}

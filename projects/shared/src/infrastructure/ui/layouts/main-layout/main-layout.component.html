@@ -1,8 +1,8 @@
 <section class="layout">
-  <header class="layout__header">
-    <lib-nav />
-  </header>
+  <aside class="layout__sidebar">
+    <lib-nav [navItems]="navItems"></lib-nav>
+  </aside>
   <main class="layout__main">
-    <lib-home />
+    <router-outlet></router-outlet>
   </main>
 </section>

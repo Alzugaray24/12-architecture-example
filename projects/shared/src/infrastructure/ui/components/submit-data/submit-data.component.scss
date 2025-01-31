@@ -1,0 +1,51 @@
+@use "../../styles/variables.scss" as *;
+
+.button {
+  padding: $spacing-small $spacing-medium;
+  border: none;
+  border-radius: 4px;
+  font-family: $font-secondary;
+  font-size: $font-size-base;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+
+  &--create {
+    background-color: $secondary-color;
+    color: $text-color;
+
+    &:hover {
+      background-color: #e6c200; // Color específico para el estado de hover
+    }
+  }
+
+  &--update {
+    background-color: $accent-color;
+    color: $text-light;
+
+    &:hover {
+      background-color: #e55347; // Color específico para el estado de hover
+    }
+  }
+
+  &--delete {
+    background-color: $primary-color;
+    color: $text-light;
+
+    &:hover {
+      background-color: #8b0000; // Color específico para el estado de hover
+    }
+  }
+
+  &--list {
+    background-color: $background-dark;
+    color: $text-light;
+
+    &:hover {
+      background-color: #3a3a3a; // Color específico para el estado de hover
+    }
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}

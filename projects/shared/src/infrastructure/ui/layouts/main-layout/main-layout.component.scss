@@ -2,18 +2,53 @@
 @use "../../styles/mixins.scss" as *;
 
 .layout {
+  display: flex;
+  height: 100vh;
   background-color: $background-color;
   color: $text-color;
   font-family: $font-primary;
-  padding: $spacing-large;
 
-  &__header {
-    @include flex(row, space-between, center);
+  &__sidebar {
+    width: 250px; // Ancho del sidebar
     background-color: $primary-color;
+    color: $text-light;
+    display: flex;
+    flex-direction: column;
     padding: $spacing-medium;
     box-shadow: $box-shadow;
+
+    lib-nav {
+      flex: 1;
+    }
   }
 
   &__main {
+    flex: 1;
+    padding: $spacing-large;
+    overflow-y: auto;
+    background-color: $background-dark;
+    color: $text-light;
+    font-family: $font-secondary;
+  }
+}
+
+// Media queries para diferentes dispositivos
+@media (max-width: $breakpoint-tablet) {
+  .layout__sidebar {
+    width: 200px; // Ajustar el ancho del sidebar en pantallas más pequeñas
+  }
+
+  .layout__main {
+    padding: $spacing-medium;
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .layout__sidebar {
+    width: 150px; // Ajustar el ancho del sidebar en pantallas móviles
+  }
+
+  .layout__main {
+    padding: $spacing-small;
   }
 }
