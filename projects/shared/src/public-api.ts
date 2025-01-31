@@ -7,3 +7,4 @@ export { SubmitDataComponent } from './infrastructure/ui/components/submit-data/
 export { MainLayoutComponent } from './infrastructure/ui/layouts/main-layout/main-layout.component';
 export { StateFactory } from './domain/state/state.factory';
 export { CardBtnComponent } from './infrastructure/ui/components/card-btn/card-btn.component';
+export { ModalComponent } from './infrastructure/ui/components/modal/modal.component';

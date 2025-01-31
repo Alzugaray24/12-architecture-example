@@ -1,18 +1,25 @@
-import { Component, inject, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ICustomer } from '../../../../domain/model/customer.response.interface';
 import { CustomerCardComponent } from '../customer-card/customer-card.component';
 import { CommonModule } from '@angular/common';
+import { CardBtnComponent } from 'shared';
 
 @Component({
   selector: 'lib-customer-page',
-  imports: [CustomerCardComponent, CommonModule],
+  standalone: true,
+  imports: [CustomerCardComponent, CommonModule, CardBtnComponent],
   templateUrl: './customer-page.component.html',
-  styleUrl: './customer-page.component.scss',
+  styleUrls: ['./customer-page.component.scss'],
 })
-export class CustomerPageComponent implements OnInit {
+export class CustomerPageComponent {
   @Input() customers: ICustomer[] = [];
 
-  ngOnInit() {
-    console.log('CustomerPageComponent initialized', this.customers);
+  trackByFn(index: number, item: ICustomer): number {
+    return item.id;
+  }
+
+  onCreateUser() {
+    // Lógica para manejar la creación de un usuario
+    console.log('Crear Usuario');
   }
 }

@@ -1,5 +1,13 @@
 <div class="customer-page">
-  @for (customer of customers; track $index) {
-  <lib-customer-card [customer]="customer"></lib-customer-card>
-  }
+  <lib-card-btn
+    [action]="'create'"
+    [entityName]="'Nuevo Usuario'"
+    (click)="onCreateUser()"
+  ></lib-card-btn>
+  <div class="customer-page__list">
+    <lib-customer-card
+      *ngFor="let customer of customers; trackBy: trackByFn"
+      [customer]="customer"
+    ></lib-customer-card>
+  </div>
 </div>

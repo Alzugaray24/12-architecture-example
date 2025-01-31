@@ -1,17 +1,30 @@
-@use "../../../../../../shared/src/infrastructure/ui/styles/variables.scss" as *;
+@use "../../../../../../shared/src/infrastructure/ui/styles/variables" as *;
+@use "../../../../../../shared/src/infrastructure/ui/styles/mixins";
 
 .customer-page {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: $spacing-medium;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: $spacing-large;
   padding: $spacing-large;
   background-color: $background-color;
 
-  @media (max-width: $breakpoint-tablet) {
-    grid-template-columns: repeat(2, 1fr);
+  &__create-btn {
+    @include mixins.button($button-create, $text-light);
+    align-self: flex-start;
   }
 
-  @media (max-width: $breakpoint-mobile) {
-    grid-template-columns: 1fr;
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $spacing-medium;
+
+    @include mixins.media(tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mixins.media(mobile) {
+      grid-template-columns: 1fr;
+    }
   }
 }
