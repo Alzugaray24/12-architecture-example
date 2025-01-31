@@ -1,1 +1,7 @@
-<p>modal works!</p>
+<div class="modal">
+  <div class="modal__content">
+    <button class="modal__close" (click)="onClose()">×</button>
+    <p class="modal__text">{{ text }}</p>
+    <button class="modal__action" (click)="onAction()">{{ actionText }}</button>
+  </div>
+</div>

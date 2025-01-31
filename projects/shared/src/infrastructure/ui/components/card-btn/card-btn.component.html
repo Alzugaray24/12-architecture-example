@@ -1,0 +1,11 @@
+<button
+  class="card-btn"
+  [ngClass]="{
+    'card-btn--create': action === 'create',
+    'card-btn--update': action === 'update',
+    'card-btn--delete': action === 'delete',
+    'card-btn--list': action === 'list'
+  }"
+>
+  {{ buttonText }}
+</button>

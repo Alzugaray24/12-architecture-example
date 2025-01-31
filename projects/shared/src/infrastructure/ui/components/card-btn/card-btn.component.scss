@@ -1,0 +1,48 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins";
+@use "sass:color";
+
+.card-btn {
+  @include mixins.button();
+  @include mixins.box-shadow(0px, 4px, 8px, rgba(0, 0, 0, 0.1));
+
+  &--create {
+    background-color: $button-create;
+    color: $text-light;
+
+    &:hover {
+      background-color: color.adjust($button-create, $lightness: 20%);
+    }
+  }
+
+  &--update {
+    background-color: $button-update;
+    color: $text-dark;
+
+    &:hover {
+      background-color: color.adjust($button-update, $lightness: 20%);
+    }
+  }
+
+  &--delete {
+    background-color: $button-delete;
+    color: $text-light;
+
+    &:hover {
+      background-color: color.adjust($button-delete, $lightness: 20%);
+    }
+  }
+
+  &--list {
+    background-color: $button-list;
+    color: $text-light;
+
+    &:hover {
+      background-color: color.adjust($button-list, $lightness: 20%);
+    }
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}

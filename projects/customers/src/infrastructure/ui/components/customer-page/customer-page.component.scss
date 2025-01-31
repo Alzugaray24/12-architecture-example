@@ -1,0 +1,17 @@
+@use "../../../../../../shared/src/infrastructure/ui/styles/variables.scss" as *;
+
+.customer-page {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $spacing-medium;
+  padding: $spacing-large;
+  background-color: $background-color;
+
+  @media (max-width: $breakpoint-tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    grid-template-columns: 1fr;
+  }
+}

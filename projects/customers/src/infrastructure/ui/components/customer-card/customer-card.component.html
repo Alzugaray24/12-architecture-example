@@ -1,4 +1,8 @@
 <div class="customer-card">
   <h3 class="customer-card__name">{{ customer.name }}</h3>
   <p class="customer-card__type">{{ customer.type }}</p>
+  <div class="customer-card__buttons">
+    <lib-card-btn [action]="'update'" [entityName]="'Usuario'"></lib-card-btn>
+    <lib-card-btn [action]="'delete'" [entityName]="'Usuario'"></lib-card-btn>
+  </div>
 </div>

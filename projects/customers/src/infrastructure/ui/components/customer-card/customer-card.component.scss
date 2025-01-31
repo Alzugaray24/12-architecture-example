@@ -1,28 +1,33 @@
-@use "../../../../../../shared/src/infrastructure/ui/styles/variables.scss" as *;
+@use "../../../../../../shared/src/infrastructure/ui/styles/variables" as *;
+@use "../../../../../../shared/src/infrastructure/ui/styles/mixins";
+@use "sass:color";
 
 .customer-card {
-  background-color: $background-color;
-  border: 1px solid $border-color;
+  background-color: $card-background;
+  border: 1px solid $card-border;
   border-radius: 8px;
-  box-shadow: $box-shadow;
+  @include mixins.box-shadow(0px, 4px, 8px, rgba(0, 0, 0, 0.1));
   padding: $spacing-medium;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 
   &__name {
+    @include mixins.text-style(1.5rem, bold, $text-color);
     font-family: $font-primary;
-    font-size: 1.5rem;
     margin-bottom: $spacing-small;
-    color: $text-color;
   }
 
   &__type {
+    @include mixins.text-style(1rem, normal, $text-color);
     font-family: $font-secondary;
-    font-size: 1rem;
-    color: $text-color;
+  }
+
+  &__buttons {
+    @include mixins.flex(row, flex-start, center, $spacing-small);
+    margin-top: $spacing-medium;
   }
 
   &:hover {
     transform: translateY(-5px);
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    @include mixins.box-shadow(0px, 8px, 16px, rgba(0, 0, 0, 0.2));
   }
 }

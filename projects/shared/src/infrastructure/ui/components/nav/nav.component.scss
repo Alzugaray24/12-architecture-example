@@ -1,4 +1,5 @@
-@use "../../styles/variables.scss" as *;
+@use "../../styles/variables" as *;
+@use "sass:color";
 
 .nav {
   background-color: $primary-color;
@@ -29,7 +30,7 @@
     transition: color 0.3s ease;
 
     &:hover {
-      color: lighten($text-light, 20%);
+      color: color.adjust($text-light, $lightness: 20%);
     }
   }
 }
