@@ -1,9 +1,9 @@
 import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 
-import { CustomerPageComponent } from '../components/customer-page/customer-page.component';
-import { GetAllCustomerUseCase } from '../../../application/list-customer.usecase';
+import { CustomerPageComponent } from '../../components/customer-page/customer-page.component';
+import { GetAllCustomerUseCase } from '../../../../application/list-customer.usecase';
 import { Observable } from 'rxjs';
-import { ICustomer } from '../../../domain/model/customer.response.interface';
+import { ICustomer } from '../../../../domain/model/customer.response.interface';
 import { AsyncPipe } from '@angular/common';
 
 @Component({

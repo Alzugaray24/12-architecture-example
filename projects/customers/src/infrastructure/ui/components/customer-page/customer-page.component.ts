@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { ICustomer } from '../../../../domain/model/customer.response.interface';
 import { CustomerCardComponent } from '../customer-card/customer-card.component';
 import { CommonModule } from '@angular/common';
@@ -14,12 +15,13 @@ import { CardBtnComponent } from 'shared';
 export class CustomerPageComponent {
   @Input() customers: ICustomer[] = [];
 
+  constructor(private router: Router) {}
+
   trackByFn(index: number, item: ICustomer): number {
     return item.id;
   }
 
   onCreateUser() {
-    // Lógica para manejar la creación de un usuario
-    console.log('Crear Usuario');
+    this.router.navigate(['/create']);
   }
 }
