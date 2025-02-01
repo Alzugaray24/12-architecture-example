@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { ListCustomersContainer } from '../containers/list-container/list-container';
 import { CreateContainerComponent } from '../containers/create-container/create-container';
+import { UpdateContainerComponent } from '../containers/update-container/update-container.component';
 
 export const customerRoutes: Routes = [
   {
@@ -9,18 +10,10 @@ export const customerRoutes: Routes = [
   },
   {
     path: 'create',
-    component: CreateContainerComponent, // Crear un nuevo cliente
+    component: CreateContainerComponent,
   },
-  // {
-  //   path: 'edit/:id',
-  //   component: CustomerEditComponent, // Editar un cliente existente
-  // },
-  // {
-  //   path: 'delete/:id',
-  //   component: CustomerDeleteComponent, // Eliminar un cliente existente
-  // },
-  // {
-  //   path: ':id',
-  //   component: CustomerDetailComponent, // Ver detalles de un cliente
-  // },
+  {
+    path: 'edit/:id',
+    component: UpdateContainerComponent,
+  },
 ];
