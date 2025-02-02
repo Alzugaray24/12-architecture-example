@@ -19,7 +19,7 @@ export class MenuCardComponent {
   constructor(private router: Router) {}
 
   onUpdate() {
-    this.router.navigate(['/edit-menu', this.menu.id]);
+    this.router.navigate(['menus/edit', this.menu.id]);
   }
 
   onDelete() {
