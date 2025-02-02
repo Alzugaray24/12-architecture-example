@@ -1,11 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { IMenu } from '../../../../domain/model/menu.reponse.interface';
+import { MenuCardComponent } from '../menu-card/menu-card.component';
+import { CardBtnComponent } from 'shared';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'lib-menu-page',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule, MenuCardComponent, CardBtnComponent],
   templateUrl: './menu-page.component.html',
-  styleUrl: './menu-page.component.scss'
+  styleUrls: ['./menu-page.component.scss'],
 })
 export class MenuPageComponent {
+  @Input() menus: IMenu[] = [];
 
+  constructor(private router: Router) {}
+
+  onCreateMenu() {
+    this.router.navigate(['menus/create']);
+  }
 }
