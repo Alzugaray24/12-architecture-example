@@ -16,6 +16,8 @@
     flex-direction: column;
     padding: $spacing-medium;
     box-shadow: $box-shadow;
+    align-items: center;
+    justify-content: center;
 
     lib-nav {
       flex: 1;

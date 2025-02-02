@@ -10,9 +10,9 @@ import { RouterOutlet } from '@angular/router';
 })
 export class MainLayoutComponent {
   navItems = [
-    { label: 'Lista de Clientes', route: '/customers' },
-    { label: 'Crear Cliente', route: '/customers/create' },
-    { label: 'Editar Cliente', route: '/customers/edit' },
-    { label: 'Eliminar Cliente', route: '/customers/delete' },
+    { label: 'Gestión de Usuarios', route: '/' },
+    { label: 'Gestión de Platos', route: '/dishes' },
+    { label: 'Gestión de Menús', route: '/menus' },
+    { label: 'Gestión de Órdenes', route: '/orders' },
   ];
 }

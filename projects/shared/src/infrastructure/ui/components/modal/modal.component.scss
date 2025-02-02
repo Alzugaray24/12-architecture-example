@@ -1,5 +1,5 @@
-@use "../../styles/variables" as *;
-@use "../../styles/mixins";
+@use "../../../../../../shared/src/infrastructure/ui/styles/variables" as *;
+@use "../../../../../../shared/src/infrastructure/ui/styles/mixins";
 
 .modal {
   position: fixed;
@@ -22,6 +22,7 @@
     position: relative;
     max-width: 500px;
     width: 100%;
+    color: black;
   }
 
   &__close {
@@ -39,15 +40,14 @@
     }
   }
 
-  &__text {
-    @include mixins.text-style($font-size-base, normal, $text-color);
-    margin: 0 0 $spacing-medium 0;
+  &__actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: $spacing-small;
+    margin-top: $spacing-medium;
   }
 
-  &__action {
+  &__btn {
     @include mixins.button($primary-color, $text-light);
-    display: block;
-    width: 100%;
-    text-align: center;
   }
 }

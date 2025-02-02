@@ -1,21 +1,21 @@
-<div class="customer-card">
-  <h3 class="customer-card__name">{{ customer.name }}</h3>
-  <p class="customer-card__type">{{ customer.type }}</p>
-  <div class="customer-card__buttons">
+<div class="dish-card">
+  <h3 class="dish-card__name">{{ dish.name }}</h3>
+  <p class="dish-card__price">{{ dish.price | currency }}</p>
+  <div class="dish-card__buttons">
     <lib-card-btn
       [action]="'update'"
-      [entityName]="'Usuario'"
+      [entityName]="'Plato'"
       (click)="onUpdate()"
     ></lib-card-btn>
     <lib-card-btn
       [action]="'delete'"
-      [entityName]="'Usuario'"
+      [entityName]="'Plato'"
       (click)="onDelete()"
     ></lib-card-btn>
   </div>
   <lib-modal
     *ngIf="showModal"
-    [text]="'¿Estás seguro de que deseas eliminar este usuario?'"
+    [text]="'¿Estás seguro de que deseas eliminar este plato?'"
     [actionText]="'Eliminar'"
     (close)="onCloseModal()"
     (action)="onConfirmDelete()"
