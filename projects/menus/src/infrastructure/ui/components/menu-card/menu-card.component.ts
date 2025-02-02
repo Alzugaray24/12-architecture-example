@@ -4,6 +4,7 @@ import { IMenu } from '../../../../domain/model/menu.reponse.interface';
 import { CardBtnComponent } from 'shared';
 import { ModalComponent } from 'shared';
 import { CommonModule } from '@angular/common';
+import { DeleteMenuUseCase } from '../../../../application/delete-menu.usecase';
 
 @Component({
   selector: 'lib-menu-card',
@@ -16,7 +17,10 @@ export class MenuCardComponent {
   @Input() menu: IMenu;
   showModal: boolean = false;
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private deleteMenuUseCase: DeleteMenuUseCase
+  ) {}
 
   onUpdate() {
     this.router.navigate(['menus/edit', this.menu.id]);
@@ -31,6 +35,9 @@ export class MenuCardComponent {
   }
 
   onConfirmDelete() {
-    console.log('Menu eliminado:', this.menu.id);
+    this.deleteMenuUseCase.execute(this.menu.id).subscribe(() => {
+      console.log('Menú eliminado:', this.menu.id);
+      this.showModal = false;
+    });
   }
 }
