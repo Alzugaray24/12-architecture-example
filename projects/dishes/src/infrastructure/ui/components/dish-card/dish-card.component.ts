@@ -4,7 +4,7 @@ import { IDish } from '../../../../domain/model/dish.response.interface';
 import { CardBtnComponent } from 'shared';
 import { ModalComponent } from 'shared';
 import { CommonModule } from '@angular/common';
-// import { DeleteDishUseCase } from '../../../../application/delete-dish.usecase';
+import { DeleteDishUseCase } from '../../../../application/delete-dish.usecase';
 
 @Component({
   selector: 'lib-dish-card',
@@ -17,10 +17,13 @@ export class DishCardComponent {
   @Input() dish: IDish;
   showModal: boolean = false;
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private deleteDishUseCase: DeleteDishUseCase
+  ) {}
 
   onUpdate() {
-    this.router.navigate(['/edit-dish', this.dish.id]);
+    this.router.navigate(['/dishes/edit', this.dish.id]);
   }
 
   onDelete() {
@@ -32,9 +35,9 @@ export class DishCardComponent {
   }
 
   onConfirmDelete() {
-    // this.deleteDishUseCase.execute(this.dish.id).subscribe(() => {
-    //   console.log('Plato eliminado:', this.dish.id);
-    //   this.showModal = false;
-    // });
+    this.deleteDishUseCase.execute(this.dish.id).subscribe(() => {
+      console.log('Plato eliminado:', this.dish.id);
+      this.showModal = false;
+    });
   }
 }

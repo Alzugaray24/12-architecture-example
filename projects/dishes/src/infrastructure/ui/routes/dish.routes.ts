@@ -11,4 +11,8 @@ export const dishRoutes: Routes = [
     path: 'create',
     component: CreateDishContainerComponent,
   },
+  {
+    path: 'edit/:id',
+    component: CreateDishContainerComponent,
+  },
 ];
