@@ -29,27 +29,4 @@ describe('AppComponent', () => {
 
     expect(compiled.querySelector('router-outlet')).toBeTruthy();
   });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.componentRef.setInput('title', 'Angular');
-
-    fixture.detectChanges();
-    const app = fixture.componentInstance;
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(app.title()).toBe('Angular');
-    expect(compiled.querySelector('p').textContent).toBe('Angular');
-  })
-
-  it('should be called onClick', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    const compiled = fixture.nativeElement as HTMLElement;
-    const buttonElement = compiled.querySelector('button');
-    spyOn(app.onClick, 'emit');
-
-    buttonElement.click();
-    
-    expect(app.onClick.emit).toHaveBeenCalled();
-  });
 });

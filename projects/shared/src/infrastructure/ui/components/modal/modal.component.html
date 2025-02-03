@@ -1,0 +1,10 @@
+<div class="modal">
+  <div class="modal__content">
+    <button class="modal__close" (click)="onClose()">×</button>
+    <p class="modal__text">{{ text }}</p>
+    <div class="modal__actions">
+      <button class="modal__btn" (click)="onAction()">{{ actionText }}</button>
+      <button class="modal__btn" (click)="onClose()">Cancelar</button>
+    </div>
+  </div>
+</div>

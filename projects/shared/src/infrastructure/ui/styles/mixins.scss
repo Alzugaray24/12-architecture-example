@@ -1,0 +1,86 @@
+@use "variables" as *;
+
+@mixin flex($direction: row, $justify: center, $align: center, $gap: 0) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}
+
+@mixin display-flex($direction: column, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin grid($columns: 2, $gap: 16px) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  gap: $gap;
+}
+
+@mixin button($bg: $primary-color, $color: $text-light) {
+  background-color: $bg;
+  color: $color;
+  padding: $spacing-small $spacing-medium;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: $button-hover;
+  }
+
+  &:disabled {
+    background-color: $button-disabled;
+    cursor: not-allowed;
+  }
+}
+
+@mixin box-shadow($x: 0px, $y: 4px, $blur: 6px, $color: rgba(0, 0, 0, 0.1)) {
+  box-shadow: $x $y $blur $color;
+}
+
+@mixin img-responsive($radius: 0px) {
+  width: 100%;
+  height: auto;
+  border-radius: $radius;
+  object-fit: cover;
+}
+
+@mixin media($breakpoint) {
+  @if $breakpoint == mobile {
+    @media (max-width: $breakpoint-mobile) {
+      @content;
+    }
+  } @else if $breakpoint == tablet {
+    @media (max-width: $breakpoint-tablet) {
+      @content;
+    }
+  } @else if $breakpoint == desktop {
+    @media (max-width: $breakpoint-desktop) {
+      @content;
+    }
+  }
+}
+
+@mixin text-style(
+  $size: $font-size-base,
+  $weight: normal,
+  $color: $text-color
+) {
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+}
+
+@mixin absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
