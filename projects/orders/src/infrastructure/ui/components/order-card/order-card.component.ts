@@ -23,7 +23,7 @@ export class OrderCardComponent {
   ) {}
 
   onUpdate() {
-    this.router.navigate(['/edit-order', this.order.id]);
+    this.router.navigate(['orders/edit', this.order.id]);
   }
 
   onDelete() {

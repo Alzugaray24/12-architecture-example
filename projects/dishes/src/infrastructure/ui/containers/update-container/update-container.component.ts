@@ -1,5 +1,5 @@
 import { Component, inject, OnDestroy, OnInit } from '@angular/core';
-import { UpdateDishUseCase } from '../../../services/update-dish/update-dish.service';
+import { UpdateDishUseCase } from '../../../../application/update-dish.usecase';
 import { UpdateDishFormComponent } from '../../forms/update-dish-form/update-dish-form.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';

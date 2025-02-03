@@ -1,17 +1,35 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { IDish } from '../domain/model/dish.response.interface';
+import { inject, Injectable } from '@angular/core';
+import { Observable, Subscription } from 'rxjs';
+import { tap } from 'rxjs/operators';
+import { IDish } from '../public-api';
+import { UpdateDishService } from '../infrastructure/services/update-dish/update-dish.service';
+import { DishState } from '../domain/state';
 
 @Injectable({
   providedIn: 'root',
 })
-export class UpdateDishService {
-  private apiUrl = 'http://localhost:8080/api/dish';
+export class UpdateDishUseCase {
+  private readonly _service = inject(UpdateDishService);
+  private readonly _state = inject(DishState);
+  private subscriptions: Subscription = new Subscription();
 
-  constructor(private http: HttpClient) {}
+  initSubscription(): void {
+    this.subscriptions = new Subscription();
+  }
+
+  destroySubscription(): void {
+    this.subscriptions.unsubscribe();
+  }
 
   execute(id: number, dish: Partial<IDish>): Observable<IDish> {
-    return this.http.put<IDish>(`${this.apiUrl}/${id}`, dish);
+    return this._service.execute(id, dish).pipe(
+      tap((updatedDish: IDish) => {
+        const currentDishes = this._state.dishes.dishes.snapshot();
+        const updatedDishes = currentDishes.map((d) =>
+          d.id === updatedDish.id ? updatedDish : d
+        );
+        this._state.dishes.dishes.set(updatedDishes);
+      })
+    );
   }
 }

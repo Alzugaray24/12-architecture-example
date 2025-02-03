@@ -16,6 +16,11 @@
     margin-bottom: $spacing-small;
   }
 
+  &__id {
+    @include mixins.text-style(1rem, normal, $text-color);
+    font-family: $font-secondary;
+  }
+
   &__type {
     @include mixins.text-style(1rem, normal, $text-color);
     font-family: $font-secondary;
